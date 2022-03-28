@@ -35,17 +35,56 @@ const App  = () => {
       <View>
         
         <TouchableOpacity>
-          <Text style={styles.forgot}>forgot password?</Text>
+          <Text onPress={
+            () =>{
+              alert('Are you really want to change your password ?');
+            }
+          } style={styles.forgot}>forgot password?</Text>
         </TouchableOpacity >
       </View>
       <View>
         <TouchableOpacity onPress={() => {
-    alert('successfully login');
+    alert('Are you really want to login ?');
   }} style={styles.buttoncontainer}>
         <Text style={styles.logintext}>LOGIN</Text>
 
         </TouchableOpacity>
       </View>
+      <View>
+        <Text style={styles.signup}>Or signup using </Text>
+      </View>
+      
+
+      <View style={ styles.imagecontainer}>
+        <TouchableOpacity  onPress={() =>{
+          alert('tweter account?')
+        }}>
+
+      <Image  source={require('./tweter.jpg')} style={styles.logo} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() =>{
+          alert('faceebook account?') }}>
+      <Image source={require('./facebook.jpg')} style={styles.logo }/>
+
+        </TouchableOpacity >
+        <TouchableOpacity onPress={() =>{
+          alert('google account?') }}>
+      <Image source={require('./google.jpg')} style={styles.logo} />
+
+        </TouchableOpacity>
+      </View>
+      
+        <View>
+          <Text style={styles.create}>creat an account ?</Text>
+          <TouchableOpacity onPress={() => {
+            alert('Do you want to creat an account');
+
+          }}>
+            <Text style={styles.register}>Register Here</Text>
+
+          </TouchableOpacity>
+          
+        </View>
       
       
      
@@ -99,6 +138,7 @@ const styles = StyleSheet.create({
     textAlign:'right',
     margin:5,
     fontWeight:'bold',
+    
   },
   buttoncontainer:{
     borderWidth:2,
@@ -113,7 +153,34 @@ const styles = StyleSheet.create({
   },
   logintext:{
     fontWeight:'bold',
+  },
+  signup:{
+    fontWeight:'bold',
+    margin:20,
+    textAlign:'center',
+  },
+  imagecontainer:{
+    flexDirection:'row',
+    alignSelf:'center'
+  },
+  logo:{
+    flexDirection:'row',
+    height:40,
+    width:40,
+    
+  },
+  create:{
+      fontWeight:'bold',
+      alignSelf:'center',
+      padding:10,
+  },
+  register:{
+    alignSelf:'center',
+    borderWidth:2,
+    borderRadius:5,
+    backgroundColor:'lightblue',
   }
+ 
 });
 
 export default App;
